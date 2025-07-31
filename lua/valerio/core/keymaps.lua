@@ -36,6 +36,9 @@ keymap.set("n", "-", "<C-x>", { desc = "Decrement number" }) -- decrement
 -- select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
+-- redo
+keymap.set("n", "<S-u>", "<C-r>", { noremap = true })
+
 -- Move Lines
 keymap.set("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
 keymap.set("n", "<A-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
