@@ -13,5 +13,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldlevel = 99
+vim.opt.foldenable = true
+
 -- set the cursoline to be transparent
 vim.cmd("highlight CursorLine guibg=NONE ctermbg=NONE")
