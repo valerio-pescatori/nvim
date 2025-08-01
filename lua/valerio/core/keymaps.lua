@@ -4,19 +4,19 @@ local keymap = vim.keymap -- for conciseness
 local opts = { noremap = true, silent = true }
 
 -- save file
-keymap.set("n", "<leader>w", "<cmd>w<CR>", opts)
+keymap.set("n", "<leader>w", "<cmd>w<CR>", { noremap = true, silent = true, desc = "Save buffer" })
 
 -- quit file
-keymap.set("n", "<leader>q", "<cmd>q<CR>", opts)
+keymap.set("n", "<leader>q", "<cmd>q<CR>", { noremap = true, silent = true, desc = "Quit" })
 
 -- esc insert mode
 keymap.set("i", "jk", "<ESC>", opts)
 
 -- goto end of line
-keymap.set({ "n", "v" }, "gl", "$", opts)
+keymap.set({ "n", "v" }, "gl", "$", { noremap = true, silent = true, desc = "Go to end of line" })
 
 -- goto start of line
-keymap.set({ "n", "v" }, "gs", "^", opts)
+keymap.set({ "n", "v" }, "gs", "^", { noremap = true, silent = true, desc = "Go to start of line" })
 
 -- Define 'gs' and 'gl' as motions for operator-pending mode (so dgs, ygs, etc. work)
 keymap.set("o", "gs", "^", { desc = "Operator to Start of Line" })
@@ -27,14 +27,12 @@ keymap.set("n", "<TAB>", "<cmd>bn<CR>", opts)
 keymap.set("n", "<S-TAB>", "<cmd>bp<CR>", opts)
 keymap.set("n", "<leader>x", "<cmd> bp|sp|bn|bd! <CR>", { noremap = true, silent = true, desc = "Close buffer" })
 
-keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
-
 -- increment/decrement numbers
 keymap.set("n", "+", "<C-a>", { desc = "Increment number" }) -- increment
 keymap.set("n", "-", "<C-x>", { desc = "Decrement number" }) -- decrement
 
 -- select all
-keymap.set("n", "<C-a>", "gg<S-v>G")
+keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select buffer" })
 
 -- redo
 keymap.set("n", "<S-u>", "<C-r>", { noremap = true })

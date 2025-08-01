@@ -54,7 +54,6 @@ return {
 		keymap.set("n", "<leader>F", builtin.grep_string, { desc = "Find string under cursor in cwd" })
 		keymap.set("n", "<leader>b", builtin.buffers, { desc = "Open buffers" })
 		keymap.set("n", "<leader>h", builtin.help_tags, { desc = "Open help tags" })
-		keymap.set("n", "<leader>g", builtin.git_files, { desc = "Open git files" })
 		keymap.set("n", "<leader>A", "<cmd>Alpha<CR>", { desc = "Open Alpha" })
 	end,
 }
