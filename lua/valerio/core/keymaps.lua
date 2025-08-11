@@ -37,6 +37,11 @@ keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select buffer" })
 -- redo
 keymap.set("n", "<S-u>", "<C-r>", { noremap = true })
 
+-- grug-far
+keymap.set("n", "<leader>sr", function()
+	require("grug-far").open({ prefills = { paths = vim.fn.expand("%") } })
+end, { desc = "Search and replace in current buffer" })
+
 -- Move Lines
 keymap.set("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
 keymap.set("n", "<A-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
